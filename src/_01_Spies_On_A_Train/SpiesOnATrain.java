@@ -1,5 +1,6 @@
 package _01_Spies_On_A_Train;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
 
@@ -23,9 +24,38 @@ public class SpiesOnATrain {
      * statements.
      */
     String findIntel(LinkedList<TrainCar> train, String[] clues) {
-    for (int i = 0; i < train.size(); i++) {
-
-	}
+    	ArrayList<String> suspects = new ArrayList<>();
+    	Node<TrainCar> tempHead = train.getHead();
+    	HashMap<String, Integer> suspicion = new HashMap<>();
+    	for (int i = 0; i < clues.length; i++) {
+			System.out.println(clues[i]);
+		}
+    	while(tempHead != null) {
+    		for (int i = 0; i < clues.length; i++) {
+    			if (tempHead.getValue().questionPassenger().contains(clues[i])) {
+    				//System.out.println(tempHead.getValue().questionPassenger());
+    				//suspects.add(tempHead.getValue().questionPassenger().split("Nice to meet you. My name is ", 1));
+    				String[] impostor = tempHead.getValue().questionPassenger().split(" ");
+    				//System.out.println(impostor[13]);
+    				suspects.add(impostor[13]);
+    			}
+			}
+    		
+    		//System.out.println(tempHead.getValue().questionPassenger());
+    		tempHead = tempHead.getNext();
+    	}
+    	//String[] suspect = new String[train.size()];
+    	for (int j = 0; j < suspects.size(); j++) {
+        	System.out.println(suspects.get(j));
+        	if (suspicion.containsKey(suspects.get(j))) {
+				suspicion.put(suspects.get(j), suspicion.get(suspects.get(j))+1);
+			}
+        	else {
+        		suspicion.put(suspects.get(j), 1);
+        	}
+		}
+    	
+    	
         return "";
 
     }
