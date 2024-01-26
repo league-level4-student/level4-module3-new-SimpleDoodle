@@ -96,7 +96,7 @@ public class RainbowZombieCongaLine {
 	 * one to the front, one to the end and one in the middle.
 	 */
 	public void brains(Zombie dancer) {
-
+		
 	}
 
 	/*
@@ -110,7 +110,7 @@ public class RainbowZombieCongaLine {
 		//for (int i = 0; i < zombieHats.length; i++) {
 		////	congaLine.add(value);
 		}
-	}
+	
 
 	public LinkedList<Zombie> getCongaLine() {
 		return congaLine;
