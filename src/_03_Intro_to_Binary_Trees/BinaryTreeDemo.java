@@ -33,7 +33,21 @@ public class BinaryTreeDemo {
      */
 
     public static void main(String[] args) {
-
+    	BinaryTree<Integer> test = new BinaryTree<>();
+    	Node<Integer> testNode = new Node<>(4);
+    	test.insert(5);
+    	test.insert(9);
+    	test.insert(2);
+    	test.insert(10);
+    	test.insert(11);
+    	test.insert(4);
+    	test.insert(-1);
+    	test.insert(7);
+    	test.delete(11);
+    	test.search(3);
+    	System.out.println(test.getRoot().toString());
+    	//test.delete(10);
+    	test.printVertical();
     }
 
 }

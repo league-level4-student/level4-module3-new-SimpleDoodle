@@ -35,5 +35,9 @@ public class Node<T extends Comparable<T>> {
     public void setRight(Node<T> right) {
         this.right = right;
     }
+    @Override
+    public String toString() {
+    	return "Node value is " + value;
+    }
 
 }
