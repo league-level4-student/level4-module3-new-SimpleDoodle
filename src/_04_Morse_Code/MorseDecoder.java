@@ -68,12 +68,16 @@ public class MorseDecoder {
 		String morseCode = "-.-- --- ..- .- .-. . .- -- .- --.. .. -. --.";
 		String mcSplit[] = morseCode.split(" ");
 		String decodeMsg = "";
+		String decodedMsg = "";
 		for (int i = 0; i < mcSplit.length; i++) {
 			MorseCode mcCoded = new MorseCode(mcSplit[i]);
-			decodeMsg = decodeMsg + mcTree.search(mcCoded);		
+			decodeMsg = decodeMsg + mcTree.search(mcCoded);
 		}
-		String decodeArr[] = decodeMsg.split("Node value is ");	
-		System.out.println(decodeArr.toString());
+		String decodeArr[] = decodeMsg.split("Node value is ");
+		for (int i = 1; i < decodeArr.length; i++) {
+			decodedMsg += decodeArr[i];
+		}
+		System.out.println(decodedMsg);
 	}
 
 }

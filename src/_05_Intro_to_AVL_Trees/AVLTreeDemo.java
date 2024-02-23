@@ -31,7 +31,27 @@ public class AVLTreeDemo {
      */
 
     public static void main(String[] args) {
-
+    	BinaryTree<Integer> bTree = new BinaryTree<>();
+    	AVLTree<Integer> avTree = new AVLTree<>();
+    	bTree.insert(50);
+    	bTree.insert(100);
+    	bTree.insert(75);
+    	bTree.insert(150);
+    	bTree.insert(125);
+    	bTree.insert(175);
+    	bTree.insert(180);
+    	bTree.insert(170);
+    	bTree.printVertical();
+    	avTree.insert(50);
+    	avTree.insert(100);
+    	avTree.insert(75);
+    	avTree.insert(150);
+    	avTree.insert(125);
+    	avTree.insert(175);
+    	avTree.insert(180);
+    	avTree.insert(170);
+    	//avTree.getRoot().setRight(avTree.getRoot().getRight());
+    	avTree.printVertical();
     }
 
 }
