@@ -1,5 +1,7 @@
 package _06_How_Many_Are_Smaller_Than_Me;
 
+import java.util.Iterator;
+
 import _03_Intro_to_Binary_Trees.Node;
 import _05_Intro_to_AVL_Trees.AVLNode;
 import _05_Intro_to_AVL_Trees.AVLTree;
@@ -19,19 +21,23 @@ public class HowManyAreSmallerThanMe {
     	AVLNode<Integer> temp = new AVLNode<Integer>(0);
 		temp = avlTree.getRoot();
 		int counter = 0;
-    	while(temp.getLeft()!=null) {
-    	if (me <= avlTree.getRoot().getValue()) {
+    	//if (me <= avlTree.getRoot().getValue()) {
 			//Search left
-    		temp = temp.getLeft();
+    		//temp = temp.getLeft();
     		
-		}
-    	else if (me > avlTree.getRoot().getValue()) {
+	//	}
+    	//else if (me > avlTree.getRoot().getValue()) {
 			//Search right
-    		counter += 1;
+    		//counter += 1;
     		// Find a way to determine whether or not a value is smaller, if it is, then test both directions to get the values
+		//}
+    	for (int i = 0; i<me; i++) {
+    		if(avlTree.search(i)!=null) {
+    			counter+=1;
+    		}
+			
 		}
-    	}
-    	return 0;
+    	return counter;
     }
 
 }
